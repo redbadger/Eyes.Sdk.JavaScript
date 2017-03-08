@@ -39,7 +39,7 @@
             promise = promise.then(function () {
                 return image.getSize();
             }).then(function (imageSize) {
-                var region = GeometryUtils.createRegion(0, that._header, imageSize.width, imageSize.height - that._header);
+                var region = GeometryUtils.createRegion(that._header, 0 , imageSize.width, imageSize.height);
                 return image.cropImage(region);
             });
         }
